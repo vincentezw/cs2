@@ -24,7 +24,7 @@ void drawDominoes(domino dominoArray[], int numberOfDominoes) {
 }
 
 void sortDominos(domino dominoArray[], int numberOfDominoes) {
-  for (int i = 1; i < (numberOfDominoes); i++) {
+  for (int i = 1; i < numberOfDominoes; i++) {
     for (int i2 = i; i2 > 0 && dominoArray[i2-1].topHalf > dominoArray[i2].topHalf; i2--) {
       domino temporary = dominoArray[i2-1];
       dominoArray[i2 -1] = dominoArray[i2];
