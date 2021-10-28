@@ -32,8 +32,12 @@ int main() {
     {"ARTS", 78, "LSD for beginners"},
   };
 
-  int numberOfComputerCourses = numCoursesInDepartment(courseArray, numCourses, "COMP");
-  cout << "There are " << numberOfComputerCourses << " courses in computing.";
+  string departmentToQuery;
+  cout << "What department are you looking to find the amount of courses for (enter  a value and press enter): ";
+  cin >> departmentToQuery;
+
+  int coursesForDept = numCoursesInDepartment(courseArray, numCourses, departmentToQuery);
+  cout << "There are " << coursesForDept << " courses in " << departmentToQuery << endl;
   return 0;
 }
 
