@@ -11,10 +11,11 @@ void printArray(int *array[], int arrayLength) {
 
 void deleteValues(int *array[], int arrayLength) {
   for (int i = 0; i < arrayLength; i++) {
-    //if (array[i] != NULL) {
+    // this check looks obsolete
+    if (array[i] != NULL) {
       delete array[i];
       array[i] = NULL;
-    //}
+    }
   }
 }
 
@@ -34,9 +35,12 @@ int main()
 
   printArray(pointerArray, arrayLength);
   deleteValues(pointerArray, arrayLength);
+  printArray(pointerArray, arrayLength);
 
-  /* If we don't check for NULL in our printArray and deleteValues functions, the program crashes with a segmentation fault. This is because the pointer
+  /* If we don't check for NULL in our printArray function, the program crashes with a segmentation fault. This is because the pointer
   in the array that holds NULL doesn't point anywhere in this scenario.
+
+  The check for null in deleteValues looks obsolete, as I can use delete many times over on the same instance, even if it holds NULL.
 
   If we don't reset the values of our array to NULL, the pointer will point to random garbage.
   */
