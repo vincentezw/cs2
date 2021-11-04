@@ -34,8 +34,10 @@ int main() {
   // delete sodas again
   for (int i = 0; i<numberOfSodas; i++) {
     delete sodaArray[i];
+    sodaArray[i] = NULL;
   }
   delete [] sodaArray;
+  sodaArray = NULL;
 
   return 0;
 }
