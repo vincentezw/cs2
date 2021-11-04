@@ -76,7 +76,6 @@ int main() {
     }
   }
 
-  // one song is from 2006
   int yearToQuery = 1989;
   int * numSongsForYear = new int;
   song **songsFromGivenYear = songsFromYear(songArray, numberOfSongs, yearToQuery, numSongsForYear); 
@@ -89,10 +88,14 @@ int main() {
   // delete songs and arrays again
   for (int i = 0; i < numberOfSongs; i++) {
     delete songArray[i];
+    songArray[i] = NULL;
   }
   delete [] songArray;
+  songArray = NULL;
   delete [] songsFromGivenYear;
+  songsFromGivenYear = NULL;
   delete numSongsForYear;
+  numSongsForYear = NULL;
 
   return 0;
 }
