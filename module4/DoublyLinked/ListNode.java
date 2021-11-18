@@ -57,6 +57,7 @@ public class ListNode {
   }
 
   public ListNode removeFirstNode() {
+    if (this.next != null) this.next.previous = null;
     return this.next;
   }
 
@@ -72,8 +73,9 @@ public class ListNode {
   }
 
   public ListNode removeNode(ListNode toRemove) {
-    if (data.equals(toRemove.data)) {
-      return next;
+    if (this.data.equals(toRemove.data)) {
+      if (this.next != null) this.next.previous = null;
+      return this.next;
     }
     ListNode currNode = this;
     while (currNode.next != null && !currNode.next.data.equals(toRemove.data)) {

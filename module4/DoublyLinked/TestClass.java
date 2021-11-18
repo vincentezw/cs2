@@ -1,16 +1,15 @@
 public class TestClass {
   public static void main(String[] args) {
-    ListNode listNode;
     String string = "Alpha";
     String string2 = "Beta";
     String string3 = "Charly";
     String string4 = "Delta";
     String string5 = "Eagle";
 
-    ListNode listNode2 = new ListNode(string3);
-    ListNode listHead = new ListNode(string2, listNode2);
-    listNode2.previous = listHead;
-    listNode2 = null;
+    ListNode secondNode = new ListNode(string3);
+    ListNode listHead = new ListNode(string2, secondNode);
+    secondNode.previous = listHead;
+    secondNode = null;
     listHead.printListFromHere();
 
     System.out.println("** add Alpha to the start, add Delta to the end **");
@@ -36,11 +35,12 @@ public class TestClass {
     listHead.addNodeToEnd(new ListNode(string));
     listHead.addNodeToEnd(new ListNode(string4));
     listHead = listHead.removeNode(listHead.next);
-
     System.out.println(listHead.concatenate());
+
     listHead = listHead.removeNode(listHead);
     listHead = listHead.removeNode(listHead);
     listHead = listHead.reverse();
+    listHead = listHead.removeFirstNode();
     System.out.println(listHead); //<- should be null!
   }
 }
